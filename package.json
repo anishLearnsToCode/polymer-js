@@ -22,7 +22,5 @@
     "url": "https://github.com/anishLearnsToCode/polymer-js/issues"
   },
   "homepage": "https://github.com/anishLearnsToCode/polymer-js#readme",
-  "dependencies": {
-    "polymer-cli": "^1.8.0"
-  }
+  "dependencies": {}
 }

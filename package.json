@@ -1,0 +1,25 @@
+{
+  "name": "polymer-js",
+  "version": "1.0.0",
+  "description": "this is a sample project that i am building to learn the library polymer.js. I am laerning from a youtube tutorial series",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo this works, lol i wasnt expectig that :)"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/anishLearnsToCode/polymer-js.git"
+  },
+  "keywords": [
+    "polyme.js",
+    "js",
+    "html",
+    "web-dev"
+  ],
+  "author": "anishLearnsToCode",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/anishLearnsToCode/polymer-js/issues"
+  },
+  "homepage": "https://github.com/anishLearnsToCode/polymer-js#readme"
+}

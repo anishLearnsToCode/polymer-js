@@ -20,5 +20,8 @@
     "bower_components",
     "test",
     "tests"
-  ]
+  ],
+  "dependencies": {
+    "polymer": "Polymer/polymer#^3.0.5"
+  }
 }

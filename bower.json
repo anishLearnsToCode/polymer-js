@@ -1,0 +1,24 @@
+{
+  "name": "Polymer-js",
+  "homepage": "https://github.com/anishLearnsToCode/polymer-js",
+  "description": "this is a sample project built to learn bower",
+  "main": "index.html",
+  "keywords": [
+    "polymer.js",
+    ";",
+    "js",
+    ";",
+    "web-dev"
+  ],
+  "authors": [
+    "anishLearnsToCode"
+  ],
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ]
+}

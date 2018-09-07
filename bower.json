@@ -1,0 +1,26 @@
+{
+  "name": "polymer-js",
+  "description": "this is a sample project that i am building to learn the library polymer.js. I am laerning from a youtube tutorial series",
+  "main": "index.js",
+  "authors": [
+    "anishLearnsToCode"
+  ],
+  "license": "MIT",
+  "keywords": [
+    "polyme.js",
+    "js",
+    "html",
+    "web-dev"
+  ],
+  "homepage": "https://github.com/anishLearnsToCode/polymer-js",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "polymer": "polymer/polymer#^3.0.5"
+  }
+}

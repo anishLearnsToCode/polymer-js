@@ -1,21 +1,51 @@
-<link rel="import" href="../polymer/polymer-element.html">
-<link rel="import" href="../polymer/lib/elements/dom-repeat.html" >
+<!--<link rel="import" href="../polymer/polymer-element.html">-->
+<link rel="import" href="bower_components/polymer/polymer-element.html">
+<!--<link rel="import" href="../polymer/lib/elements/dom-repeat.html" >-->
 <link rel="import" href="bower_components/polymer/lib/elements/dom-repeat.html" >
+<link rel="import" href="bower_components/paper-input/paper-input.html" >
+<link rel="import" href="bower_components/paper-checkbox/paper-checkbox.html">
+<link rel="import" href="bower_components/paper-button/paper-button.html" >
+
+<link rel="import" href="bower_components/polymer/lib/utils/gestures.html" >
 
 <dom-module id="polycast-checklist">
   <template>
     <style>
+      * {
+        font-family: Roboto;
+      }
+
       :host {
         display: block;
+        max-width: 500px;
+      }
+
+      .task {
+        display: flex;
+        align-items: center;
+      }
+
+      paper-input {
+        display: inline-block;
+      }
+
+      .red {
+        background-color: red;
+        width: 4px;
       }
     </style>
 
     <h3>Todo:</h3>
-    <dom-repeat items="{{tasks}}" as="task">
+    <dom-repeat
+            items="{{tasks}}" as="task"
+      filter = "isNotCompleted"
+      observe = "completed"
+    >
       <template>
-        <div>
-          <input type="checkbox">
-          <input type="text" value="{{task}}">
+        <div class="task">
+          <paper-checkbox checked="{{task.completed}}"></paper-checkbox>
+          <!--<paper-button class="red">R</paper-button>-->
+          <paper-input value="{{task.name}}" label="task-name" no-label-float></paper-input>
         </div>
       </template>
     </dom-repeat>
@@ -23,7 +53,7 @@
     <h3>Completed: </h3>
     <!-- Add completed Stuff -->
 
-    <button type="button">Add Task</button>
+    <paper-button on-click="addTask">Add Task</paper-button>
   </template>
 
   <script>
@@ -41,11 +71,30 @@
         return {
           tasks: {
             type: Array,
-            value: () => {
-                return ["play guitar", "play drums", "be awesome"];
-            }
+              value : []
+            // value: () => [{id: 1, name: 'guitar', completed: true}, {name: 'bass', completed: false}]
           }
         };
+      }
+
+      addTask() {
+
+          const newTask = {
+              name : '' ,
+              completed : false
+          };
+
+          this.push('tasks', newTask);
+          console.log('button clicked - addTask');
+      }
+
+      isNotCompleted(task) {
+          console.log('this is the filter function that has been called');
+          return !task.completed;
+      }
+
+      removeTask() {
+          console.log('button clicked - remove task')
       }
     }
 

@@ -1,4 +1,6 @@
 <link rel="import" href="../polymer/polymer-element.html">
+<link rel="import" href="../polymer/lib/elements/dom-repeat.html" >
+<link rel="import" href="bower_components/polymer/lib/elements/dom-repeat.html" >
 
 <dom-module id="polycast-checklist">
   <template>
@@ -7,7 +9,21 @@
         display: block;
       }
     </style>
-    <h2>Hello [[prop1]]!</h2>
+
+    <h3>Todo:</h3>
+    <dom-repeat items="{{tasks}}" as="task">
+      <template>
+        <div>
+          <input type="checkbox">
+          <input type="text" value="{{task}}">
+        </div>
+      </template>
+    </dom-repeat>
+
+    <h3>Completed: </h3>
+    <!-- Add completed Stuff -->
+
+    <button type="button">Add Task</button>
   </template>
 
   <script>
@@ -23,9 +39,11 @@
       static get is() { return 'polycast-checklist'; }
       static get properties() {
         return {
-          prop1: {
-            type: String,
-            value: 'polycast-checklist'
+          tasks: {
+            type: Array,
+            value: () => {
+                return ["play guitar", "play drums", "be awesome"];
+            }
           }
         };
       }

@@ -29,11 +29,21 @@
         display: inline-block;
       }
 
+      #addTask {
+        margin-top: 100px;
+      }
+
       .red {
         background-color: red;
         width: 4px;
       }
+
+      h2 {
+        text-decoration: underline;
+      }
     </style>
+
+    <h2>[[name]]</h2>
 
     <h3>Todo:</h3>
     <dom-repeat
@@ -51,9 +61,26 @@
     </dom-repeat>
 
     <h3>Completed: </h3>
-    <!-- Add completed Stuff -->
+    <dom-repeat
+            items="{{tasks}}" as="task"
+            filter = "isCompleted"
+            observe = "completed"
+    >
+      <template>
+        <div class="task">
+          <paper-checkbox checked="{{task.completed}}"></paper-checkbox>
+          <!--<paper-button class="red">R</paper-button>-->
+          <paper-input value="{{task.name}}" label="task-name" no-label-float></paper-input>
+        </div>
+      </template>
+    </dom-repeat>
 
-    <paper-button on-click="addTask">Add Task</paper-button>
+    <!--<div class="task">-->
+      <!--<paper-checkbox ></paper-checkbox>-->
+      <!--<paper-input label="Task" no-label-float></paper-input>-->
+    <!--</div>-->
+
+    <paper-button on-click="addTask" id="addTask">Add Task</paper-button>
   </template>
 
   <script>
@@ -69,6 +96,10 @@
       static get is() { return 'polycast-checklist'; }
       static get properties() {
         return {
+            name : {
+                type : String ,
+                value : 'Todo List'
+            } ,
           tasks: {
             type: Array,
               value : []
@@ -86,6 +117,11 @@
 
           this.push('tasks', newTask);
           console.log('button clicked - addTask');
+      }
+
+      isCompleted(task) {
+          console.log('this is a filter function - returns tru if it has been checked');
+          return task.completed;
       }
 
       isNotCompleted(task) {

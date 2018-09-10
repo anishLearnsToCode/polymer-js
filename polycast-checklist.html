@@ -1,0 +1,36 @@
+<link rel="import" href="../polymer/polymer-element.html">
+
+<dom-module id="polycast-checklist">
+  <template>
+    <style>
+      :host {
+        display: block;
+      }
+    </style>
+    <h2>Hello [[prop1]]!</h2>
+  </template>
+
+  <script>
+    /**
+     * `polycast-checklist`
+     * 
+     *
+     * @customElement
+     * @polymer
+     * @demo demo/index.html
+     */
+    class PolycastChecklist extends Polymer.Element {
+      static get is() { return 'polycast-checklist'; }
+      static get properties() {
+        return {
+          prop1: {
+            type: String,
+            value: 'polycast-checklist'
+          }
+        };
+      }
+    }
+
+    window.customElements.define(PolycastChecklist.is, PolycastChecklist);
+  </script>
+</dom-module>

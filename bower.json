@@ -1,26 +1,15 @@
 {
-  "name": "polymer-js",
-  "description": "this is a sample project that i am building to learn the library polymer.js. I am laerning from a youtube tutorial series",
-  "main": "index.js",
-  "authors": [
-    "anishLearnsToCode"
-  ],
-  "license": "MIT",
-  "keywords": [
-    "polyme.js",
-    "js",
-    "html",
-    "web-dev"
-  ],
-  "homepage": "https://github.com/anishLearnsToCode/polymer-js",
-  "ignore": [
-    "**/.*",
-    "node_modules",
-    "bower_components",
-    "test",
-    "tests"
-  ],
+  "name": "polycast-checklist",
+  "main": "polycast-checklist.html",
   "dependencies": {
-    "polymer": "polymer/polymer#^3.0.5"
+    "polymer": "Polymer/polymer#^2.0.0"
+  },
+  "devDependencies": {
+    "iron-demo-helpers": "PolymerElements/iron-demo-helpers#^2.0.0",
+    "web-component-tester": "Polymer/web-component-tester#^6.0.0",
+    "webcomponentsjs": "webcomponents/webcomponentsjs#^1.0.0"
+  },
+  "resolutions": {
+    "polymer": "^2.0.0"
   }
 }

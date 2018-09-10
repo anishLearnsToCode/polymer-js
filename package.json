@@ -22,5 +22,6 @@
     "url": "https://github.com/anishLearnsToCode/polymer-js/issues"
   },
   "homepage": "https://github.com/anishLearnsToCode/polymer-js#readme",
-  "dependencies": {}
+  "dependencies": {},
+  "devDependencies": {}
 }
